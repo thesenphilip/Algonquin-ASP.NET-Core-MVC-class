@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+Name: Philip Thesen
+Student ID: 040797646
+Class:  CST8359 lab# 304
+Due Date: May 29, 2021
+ */
+
+
+
+using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
@@ -91,7 +100,6 @@ namespace Lab1
             }
             else
             {
-
                 Console.WriteLine("Reading Words");
                 try
                 {
@@ -113,7 +121,6 @@ namespace Lab1
                 }
                 Console.WriteLine("Reading Words complete");
                 Console.WriteLine("Number of words found: " + words.Count() + "\n");
-
             }
 
         }
@@ -138,9 +145,7 @@ namespace Lab1
                          tempString = tempList.ElementAt(i);
                          tempList[i] = tempList[j];
                          tempList[j] = tempString;
-
                      }
-
                  }
              }
 
