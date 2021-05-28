@@ -92,7 +92,7 @@ namespace Lab1
 
         public static void ImportWords(IList<string> words)
         {
-
+            //checks to see if the file was already imported . If not then it does and displays the word count
             if (words.Count() > 0)
             {
                 Console.WriteLine("File has already been imported");
@@ -140,8 +140,10 @@ namespace Lab1
              {
                  for (int j = i+ 1; j < count; j++)
                  {
+                    //checks to see if the current adjecent strings are sorted >0 they are not.
                      if (String.Compare(tempList.ElementAt(i), tempList.ElementAt(j)) >0)
                      {
+                        //store the unsorted string and place it in order
                          tempString = tempList.ElementAt(i);
                          tempList[i] = tempList[j];
                          tempList[j] = tempString;
@@ -160,6 +162,7 @@ namespace Lab1
             Stopwatch timer = new Stopwatch();
             timer.Start();
 
+            //Order the string in words in alphabetical order. The MS documentation says the default order is ascending so no need to distinguish.
             var sort = from word in words
                        orderby word
                        select word;
@@ -178,6 +181,7 @@ namespace Lab1
         }
         public static void TakeFirstTenWords(IList<string> words)
         {
+            //grabs the strings in words and adds the first 10 to a list that will be printed out to the user
             var firstTen = (from word in words
                             select word).Take(10).ToList();
 
@@ -191,6 +195,7 @@ namespace Lab1
         }
         public static void NumWordsStartsWithJ(IList<string> words)
         {
+            //grabs the strings in words and adds the words starting with 'j' to a list, that will be printed out to the user
             var jWords = (from word in words
                             where word.StartsWith("j")
                             select word).ToList();
@@ -204,6 +209,7 @@ namespace Lab1
         }
         public static void WordsEndingWithD(IList<string> words)
         {
+            //grabs the strings in words and adds the words ending with 'd' to a list, that will be printed out to the user
             var dWords = (from word in words
                           where word.EndsWith("d")
                           select word).ToList();
@@ -219,6 +225,7 @@ namespace Lab1
 
         public static void WordsGreaterThanFour(IList<string> words)
         {
+            //grabs the strings in words and adds the words with a length > 4 to a list, that will be printed out to the user
             var greaterThanFour = (from word in words
                           where word.Length > 4
                           select word).ToList();
@@ -233,6 +240,7 @@ namespace Lab1
 
         public static void WordsLessThanThree(IList<string> words)
         {
+            //grabs the strings in words and adds the words start with 'a' and < 3 in length , to a list, that will be printed out to the user
             var lessThanThree = (from word in words
                           where word.StartsWith("a") && word.Length <3
                           select word).ToList();
