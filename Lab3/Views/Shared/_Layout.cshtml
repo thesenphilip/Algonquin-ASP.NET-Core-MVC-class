@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>Welcome to my lab 3!</h1>
+        My name is: Philip Thesen 
+        <br />
+        <br />
+        @Html.ActionLink("Home", "Index", "Home") <br />
+        @Html.ActionLink("Show the song!", "Razor", "Home") <br />
+        @Html.ActionLink("Persons", "CreatePerson", "Home") <br />
+    </header>
+    <div class="content">
+        @RenderBody()
+    </div>
+    <footer>
+        Footer!
+    </footer>
+</body>
+</html>

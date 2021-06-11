@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = "_Layout";
+    int i = Int32.Parse(ViewBag.Bottles);
+}
+
+<h3>Display Session Data</h3>
+
+
+<table>
+    <tr>
+        <td> 
+            <button type="submit" onclick="location.href='@Url.Action("Razor", "Home")'" >Play Again!</button>
+        </td>
+    </tr>
+    @while (i > 0)
+    {
+    <tr>
+        
+        <td>    
+            @if (i == 1)
+            {
+            <p>
+                @i green bottles standing on the wall,<br />
+                @i green bottles standing on the wall,<br />
+                And if one green bottle should accidently fall,<br />
+                There'll be no green bottles standing on the wall.
+            </p>
+            }
+            else
+            {
+            <p>
+                @i green bottles standing on the wall,<br />
+                @i green bottles standing on the wall,<br />
+                And if one green bottle should accidently fall,<br />
+                There'll be @(i-1) green bottles standing on the wall.
+            </p>
+            }
+           
+        </td>
+    </tr>
+        i--;
+    }
+
+</table>
+<p>There is no green bottle standing on the wall.</p>
