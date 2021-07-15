@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="../wwwroot/css/StyleSheet.css">
+
+</head>
+<body>
+    <header>
+
+
+        <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
+        <a class="nav-link text-dark" asp-controller="AnswerImages" asp-action="Index">Answers</a>
+        
+
+
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    @RenderSection("Scripts", required: false)
+    <footer></footer>
+</body>
+</html>
